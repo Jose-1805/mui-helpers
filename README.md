@@ -15,7 +15,7 @@ npm install --save mui-helpers
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'mui-helpers'
+import { MyComponent } from 'mui-helpers'
 import 'mui-helpers/dist/index.css'
 
 class Example extends Component {

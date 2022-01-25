@@ -1,0 +1,16 @@
+.box_loading_full_screen {
+  position: fixed !important;
+  top: 0px !important;
+  left: 0px !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.box_loading_no_full_screen {
+  position: absolute !important;
+  border-radius: 0.5rem !important;
+}
+
+.overflow_hidden {
+  overflow: hidden !important;
+}
