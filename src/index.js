@@ -9,6 +9,7 @@ import TransitionModal from './helpers/transitional_modal/TransitionalModal'
 import Btn from './helpers/btn/Btn'
 import DialogConfirm from './helpers/dialog_confirm/DialogConfirm'
 import useConfirm from './helpers/hooks/UseConfirm'
+import AutocompleteFromServer from './helpers/autocomplete_from_server/AutocompleteFromServer'
 
 export {
   BoxLoading,
@@ -21,5 +22,6 @@ export {
   TransitionModal,
   DialogConfirm,
   useConfirm,
-  useColorClasses
+  useColorClasses,
+  AutocompleteFromServer
 }
