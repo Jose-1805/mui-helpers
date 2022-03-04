@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import store from './redux/store'
-import 'mui-helpers/dist/index.css'
+//import 'mui-helpers/dist/index.css'
 import ExampleBoxLoading from './components/box_loading/ExampleBoxLoading'
 import ExampleIcon from './components/icon/ExampleIcon'
 import ExampleBugList from './components/bug_list/ExampleBugList'

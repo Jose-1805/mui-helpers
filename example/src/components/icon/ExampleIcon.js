@@ -6,7 +6,7 @@ const ExampleIcon = () => {
   return (
     <Box>
       <Icon name='AccountMultiple' color='primary' />
-      <Icon name='AccountMultiple' color='secondary' type='filled' />
+      <Icon name='Whatsapp' color='secondary' type='filled' />
     </Box>
   )
 }

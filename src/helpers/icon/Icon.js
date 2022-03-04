@@ -372,6 +372,7 @@ import Domain from 'mdi-material-ui/Domain'
 import Facebook from 'mdi-material-ui/Facebook'
 import Youtube from 'mdi-material-ui/Youtube'
 import Instagram from 'mdi-material-ui/Instagram'
+import Whatsapp from 'mdi-material-ui/Whatsapp'
 import Google from 'mdi-material-ui/Google'
 import Twitter from 'mdi-material-ui/Twitter'
 import ContentCopy from 'mdi-material-ui/ContentCopy'
@@ -1101,6 +1102,11 @@ const icons = {
   Instagram: {
     filled: Instagram,
     outline: Instagram
+  },
+
+  Whatsapp: {
+    filled: Whatsapp,
+    outline: Whatsapp
   },
 
   Youtube: {
