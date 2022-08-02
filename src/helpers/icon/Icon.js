@@ -253,6 +253,20 @@ import PackageVariant from 'mdi-material-ui/PackageVariant'
 
 import PackageVariantClosed from 'mdi-material-ui/PackageVariantClosed'
 
+import PackageVariantClosedCheck from 'mdi-material-ui/PackageVariantClosedCheck'
+
+import PackageVariantClosedMinus from 'mdi-material-ui/PackageVariantClosedMinus'
+
+import PackageVariantClosedPlus from 'mdi-material-ui/PackageVariantClosedPlus'
+
+import PackageVariantClosedRemove from 'mdi-material-ui/PackageVariantClosedRemove'
+
+import PackageVariantMinus from 'mdi-material-ui/PackageVariantMinus'
+
+import PackageVariantPlus from 'mdi-material-ui/PackageVariantPlus'
+
+import PackageVariantRemove from 'mdi-material-ui/PackageVariantRemove'
+
 import Magnify from 'mdi-material-ui/Magnify'
 
 import CursorDefault from 'mdi-material-ui/CursorDefault'
@@ -932,6 +946,35 @@ const icons = {
   PackageVariantClosed: {
     filled: PackageVariantClosed,
     outline: PackageVariantClosed
+  },
+
+  PackageVariantClosedCheck: {
+    filled: PackageVariantClosedCheck,
+    outline: PackageVariantClosedCheck
+  },
+  PackageVariantClosedMinus: {
+    filled: PackageVariantClosedMinus,
+    outline: PackageVariantClosedMinus
+  },
+  PackageVariantClosedPlus: {
+    filled: PackageVariantClosedPlus,
+    outline: PackageVariantClosedPlus
+  },
+  PackageVariantClosedRemove: {
+    filled: PackageVariantClosedRemove,
+    outline: PackageVariantClosedRemove
+  },
+  PackageVariantMinus: {
+    filled: PackageVariantMinus,
+    outline: PackageVariantMinus
+  },
+  PackageVariantPlus: {
+    filled: PackageVariantPlus,
+    outline: PackageVariantPlus
+  },
+  PackageVariantRemove: {
+    filled: PackageVariantRemove,
+    outline: PackageVariantRemove
   },
 
   Magnify: {
