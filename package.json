@@ -1,6 +1,6 @@
 {
   "name": "mui-helpers",
-  "version": "1.0.10",
+  "version": "1.0.15",
   "description": "Librería de componentes creados con MUI",
   "author": "Jose-1805",
   "license": "MIT",
@@ -57,6 +57,6 @@
     "dist"
   ],
   "dependencies": {
-    "mdi-material-ui": "^7.1.0"
+    "mdi-material-ui": "^7.4.0"
   }
 }

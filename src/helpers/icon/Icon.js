@@ -253,8 +253,6 @@ import PackageVariant from 'mdi-material-ui/PackageVariant'
 
 import PackageVariantClosed from 'mdi-material-ui/PackageVariantClosed'
 
-import PackageVariantClosedCheck from 'mdi-material-ui/PackageVariantClosedCheck'
-
 import PackageVariantClosedMinus from 'mdi-material-ui/PackageVariantClosedMinus'
 
 import PackageVariantClosedPlus from 'mdi-material-ui/PackageVariantClosedPlus'
@@ -948,30 +946,31 @@ const icons = {
     outline: PackageVariantClosed
   },
 
-  PackageVariantClosedCheck: {
-    filled: PackageVariantClosedCheck,
-    outline: PackageVariantClosedCheck
-  },
   PackageVariantClosedMinus: {
     filled: PackageVariantClosedMinus,
     outline: PackageVariantClosedMinus
   },
+
   PackageVariantClosedPlus: {
     filled: PackageVariantClosedPlus,
     outline: PackageVariantClosedPlus
   },
+
   PackageVariantClosedRemove: {
     filled: PackageVariantClosedRemove,
     outline: PackageVariantClosedRemove
   },
+
   PackageVariantMinus: {
     filled: PackageVariantMinus,
     outline: PackageVariantMinus
   },
+
   PackageVariantPlus: {
     filled: PackageVariantPlus,
     outline: PackageVariantPlus
   },
+
   PackageVariantRemove: {
     filled: PackageVariantRemove,
     outline: PackageVariantRemove
