@@ -1,6 +1,6 @@
 {
   "name": "mui-helpers",
-  "version": "1.0.17",
+  "version": "1.0.21",
   "description": "Librería de componentes creados con MUI",
   "author": "Jose-1805",
   "license": "MIT",
@@ -21,7 +21,8 @@
     "test:unit": "cross-env CI=1 react-scripts test --env=jsdom",
     "test:watch": "react-scripts test --env=jsdom",
     "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "deploy": "gh-pages -d example/build",
+    "analyze": "source-map-explorer 'dist/*.js'"
   },
   "peerDependencies": {
     "@emotion/react": "^11.7.1",
@@ -57,6 +58,7 @@
     "dist"
   ],
   "dependencies": {
-    "mdi-material-ui": "^7.4.0"
+    "mdi-material-ui": "^7.4.0",
+    "source-map-explorer": "^2.5.2"
   }
 }
