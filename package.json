@@ -58,7 +58,7 @@
     "dist"
   ],
   "dependencies": {
-    "mdi-material-ui": "^7.4.0",
+    "mdi-material-ui": "^7.6.0",
     "source-map-explorer": "^2.5.2"
   }
 }
