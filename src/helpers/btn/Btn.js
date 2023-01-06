@@ -10,7 +10,7 @@ const props_exceptions = ['tReady', 't']
 const getProps = (props, isIconButton = false) => {
   let data = {}
 
-  if (!isIconButton) data['size'] = 'large'
+  if (!isIconButton) data['size'] = 'small'
 
   for (let key in props) {
     if (!props_exceptions.includes(key)) {

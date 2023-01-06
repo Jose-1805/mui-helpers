@@ -1,405 +1,525 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import './css/styles.css'
 import { useTheme } from '@mui/material/styles'
 
-import HelpRhombus from 'mdi-material-ui/HelpRhombus'
-import HelpRhombusOutline from 'mdi-material-ui/HelpRhombusOutline'
+const HelpRhombus = lazy(() => import('mdi-material-ui/HelpRhombus'))
+const HelpRhombusOutline = lazy(() =>
+  import('mdi-material-ui/HelpRhombusOutline')
+)
 
-import AccountDetails from 'mdi-material-ui/AccountDetails'
-import AccountDetailsOutline from 'mdi-material-ui/AccountDetailsOutline'
+const AccountDetails = lazy(() => import('mdi-material-ui/AccountDetails'))
+const AccountDetailsOutline = lazy(() =>
+  import('mdi-material-ui/AccountDetailsOutline')
+)
 
-import AccountMultiple from 'mdi-material-ui/AccountMultiple'
-import AccountMultipleOutline from 'mdi-material-ui/AccountMultipleOutline'
+const AccountMultiple = lazy(() => import('mdi-material-ui/AccountMultiple'))
+const AccountMultipleOutline = lazy(() =>
+  import('mdi-material-ui/AccountMultipleOutline')
+)
 
-import AccountPlus from 'mdi-material-ui/AccountPlus'
-import AccountPlusOutline from 'mdi-material-ui/AccountPlusOutline'
+const AccountPlus = lazy(() => import('mdi-material-ui/AccountPlus'))
+const AccountPlusOutline = lazy(() =>
+  import('mdi-material-ui/AccountPlusOutline')
+)
 
-import AccountCircle from 'mdi-material-ui/AccountCircle'
-import AccountCircleOutline from 'mdi-material-ui/AccountCircleOutline'
+const AccountCircle = lazy(() => import('mdi-material-ui/AccountCircle'))
+const AccountCircleOutline = lazy(() =>
+  import('mdi-material-ui/AccountCircleOutline')
+)
 
-import Star from 'mdi-material-ui/Star'
-import StarOutline from 'mdi-material-ui/StarOutline'
+const Star = lazy(() => import('mdi-material-ui/Star'))
+const StarOutline = lazy(() => import('mdi-material-ui/StarOutline'))
 
-import Certificate from 'mdi-material-ui/Certificate'
-import CertificateOutline from 'mdi-material-ui/CertificateOutline'
+const Certificate = lazy(() => import('mdi-material-ui/Certificate'))
+const CertificateOutline = lazy(() =>
+  import('mdi-material-ui/CertificateOutline')
+)
 
-import KeyChainVariant from 'mdi-material-ui/KeyChainVariant'
+const KeyChainVariant = lazy(() => import('mdi-material-ui/KeyChainVariant'))
 
-import Clock from 'mdi-material-ui/Clock'
+const Clock = lazy(() => import('mdi-material-ui/Clock'))
 
-import WeatherNight from 'mdi-material-ui/WeatherNight'
+const WeatherNight = lazy(() => import('mdi-material-ui/WeatherNight'))
 
-import WeatherSunny from 'mdi-material-ui/WeatherSunny'
+const WeatherSunny = lazy(() => import('mdi-material-ui/WeatherSunny'))
 
-import MapClock from 'mdi-material-ui/MapClock'
-import MapClockOutline from 'mdi-material-ui/MapClockOutline'
+const MapClock = lazy(() => import('mdi-material-ui/MapClock'))
+const MapClockOutline = lazy(() => import('mdi-material-ui/MapClockOutline'))
 
-import MapMarker from 'mdi-material-ui/MapMarker'
-import MapMarkerOutline from 'mdi-material-ui/MapMarkerOutline'
+const MapMarker = lazy(() => import('mdi-material-ui/MapMarker'))
+const MapMarkerOutline = lazy(() => import('mdi-material-ui/MapMarkerOutline'))
 
-import MapMarkerRadius from 'mdi-material-ui/MapMarkerRadius'
-import MapMarkerRadiusOutline from 'mdi-material-ui/MapMarkerRadiusOutline'
+const MapMarkerRadius = lazy(() => import('mdi-material-ui/MapMarkerRadius'))
+const MapMarkerRadiusOutline = lazy(() =>
+  import('mdi-material-ui/MapMarkerRadiusOutline')
+)
 
-import MapMarkerPlus from 'mdi-material-ui/MapMarkerPlus'
-import MapMarkerPlusOutline from 'mdi-material-ui/MapMarkerPlusOutline'
+const MapMarkerPlus = lazy(() => import('mdi-material-ui/MapMarkerPlus'))
+const MapMarkerPlusOutline = lazy(() =>
+  import('mdi-material-ui/MapMarkerPlusOutline')
+)
 
-import MapMarkerMultiple from 'mdi-material-ui/MapMarkerMultiple'
-import MapMarkerMultipleOutline from 'mdi-material-ui/MapMarkerMultipleOutline'
+const MapMarkerMultiple = lazy(() =>
+  import('mdi-material-ui/MapMarkerMultiple')
+)
+const MapMarkerMultipleOutline = lazy(() =>
+  import('mdi-material-ui/MapMarkerMultipleOutline')
+)
 
-import CreditCard from 'mdi-material-ui/CreditCard'
-import CreditCardOutline from 'mdi-material-ui/CreditCardOutline'
+const CreditCard = lazy(() => import('mdi-material-ui/CreditCard'))
+const CreditCardOutline = lazy(() =>
+  import('mdi-material-ui/CreditCardOutline')
+)
 
-import Barcode from 'mdi-material-ui/Barcode'
+const Barcode = lazy(() => import('mdi-material-ui/Barcode'))
 
-import Account from 'mdi-material-ui/Account'
-import AccountOutline from 'mdi-material-ui/AccountOutline'
+const Account = lazy(() => import('mdi-material-ui/Account'))
+const AccountOutline = lazy(() => import('mdi-material-ui/AccountOutline'))
 
-import Text from 'mdi-material-ui/Text'
+const Text = lazy(() => import('mdi-material-ui/Text'))
 
-import Printer from 'mdi-material-ui/Printer'
+const Printer = lazy(() => import('mdi-material-ui/Printer'))
 
-import CubeSend from 'mdi-material-ui/CubeSend'
+const CubeSend = lazy(() => import('mdi-material-ui/CubeSend'))
 
-import Cube from 'mdi-material-ui/Cube'
-import CubeOutline from 'mdi-material-ui/CubeOutline'
+const Cube = lazy(() => import('mdi-material-ui/Cube'))
+const CubeOutline = lazy(() => import('mdi-material-ui/CubeOutline'))
 
-import VanUtility from 'mdi-material-ui/VanUtility'
+const VanUtility = lazy(() => import('mdi-material-ui/VanUtility'))
 
-import Car from 'mdi-material-ui/Car'
-import CarOutline from 'mdi-material-ui/CarOutline'
+const Car = lazy(() => import('mdi-material-ui/Car'))
+const CarOutline = lazy(() => import('mdi-material-ui/CarOutline'))
 
-import CarCog from 'mdi-material-ui/CarCog'
+const CarCog = lazy(() => import('mdi-material-ui/CarCog'))
 
-import CarHatchback from 'mdi-material-ui/CarHatchback'
+const CarHatchback = lazy(() => import('mdi-material-ui/CarHatchback'))
 
-import Close from 'mdi-material-ui/Close'
+const Close = lazy(() => import('mdi-material-ui/Close'))
 
-import Counter from 'mdi-material-ui/Counter'
+const Counter = lazy(() => import('mdi-material-ui/Counter'))
 
-import CheckCircle from 'mdi-material-ui/CheckCircle'
-import CheckCircleOutline from 'mdi-material-ui/CheckCircleOutline'
+const CheckCircle = lazy(() => import('mdi-material-ui/CheckCircle'))
+const CheckCircleOutline = lazy(() =>
+  import('mdi-material-ui/CheckCircleOutline')
+)
 
-import Shopping from 'mdi-material-ui/Shopping'
-import ShoppingOutline from 'mdi-material-ui/ShoppingOutline'
+const Shopping = lazy(() => import('mdi-material-ui/Shopping'))
+const ShoppingOutline = lazy(() => import('mdi-material-ui/ShoppingOutline'))
 
-import Cash from 'mdi-material-ui/Cash'
+const Cash = lazy(() => import('mdi-material-ui/Cash'))
 
-import CloseCircle from 'mdi-material-ui/CloseCircle'
-import CloseCircleOutline from 'mdi-material-ui/CloseCircleOutline'
+const CloseCircle = lazy(() => import('mdi-material-ui/CloseCircle'))
+const CloseCircleOutline = lazy(() =>
+  import('mdi-material-ui/CloseCircleOutline')
+)
 
-import AlertCircle from 'mdi-material-ui/AlertCircle'
-import AlertCircleOutline from 'mdi-material-ui/AlertCircleOutline'
+const AlertCircle = lazy(() => import('mdi-material-ui/AlertCircle'))
+const AlertCircleOutline = lazy(() =>
+  import('mdi-material-ui/AlertCircleOutline')
+)
 
-import Alert from 'mdi-material-ui/Alert'
-import AlertOutline from 'mdi-material-ui/AlertOutline'
+const Alert = lazy(() => import('mdi-material-ui/Alert'))
+const AlertOutline = lazy(() => import('mdi-material-ui/AlertOutline'))
 
-import ThumbUp from 'mdi-material-ui/ThumbUp'
-import ThumbUpOutline from 'mdi-material-ui/ThumbUpOutline'
+const ThumbUp = lazy(() => import('mdi-material-ui/ThumbUp'))
+const ThumbUpOutline = lazy(() => import('mdi-material-ui/ThumbUpOutline'))
 
-import AccountOff from 'mdi-material-ui/AccountOff'
-import AccountOffOutline from 'mdi-material-ui/AccountOffOutline'
+const AccountOff = lazy(() => import('mdi-material-ui/AccountOff'))
+const AccountOffOutline = lazy(() =>
+  import('mdi-material-ui/AccountOffOutline')
+)
 
-import Menu from 'mdi-material-ui/Menu'
-import Sale from 'mdi-material-ui/Sale'
+const Menu = lazy(() => import('mdi-material-ui/Menu'))
+const Sale = lazy(() => import('mdi-material-ui/Sale'))
 
-import ContentSave from 'mdi-material-ui/ContentSave'
-import ContentSaveOutline from 'mdi-material-ui/ContentSaveOutline'
+const ContentSave = lazy(() => import('mdi-material-ui/ContentSave'))
+const ContentSaveOutline = lazy(() =>
+  import('mdi-material-ui/ContentSaveOutline')
+)
 
-import ArrowRightBold from 'mdi-material-ui/ArrowRightBold'
-import ArrowRight from 'mdi-material-ui/ArrowRight'
+const ArrowRightBold = lazy(() => import('mdi-material-ui/ArrowRightBold'))
+const ArrowRight = lazy(() => import('mdi-material-ui/ArrowRight'))
 
-import ArrowLeftBold from 'mdi-material-ui/ArrowLeftBold'
-import ArrowLeft from 'mdi-material-ui/ArrowLeft'
+const ArrowLeftBold = lazy(() => import('mdi-material-ui/ArrowLeftBold'))
+const ArrowLeft = lazy(() => import('mdi-material-ui/ArrowLeft'))
 
-import Pencil from 'mdi-material-ui/Pencil'
-import PencilOutline from 'mdi-material-ui/PencilOutline'
+const Pencil = lazy(() => import('mdi-material-ui/Pencil'))
+const PencilOutline = lazy(() => import('mdi-material-ui/PencilOutline'))
 
-import ClipboardList from 'mdi-material-ui/ClipboardList'
-import ClipboardListOutline from 'mdi-material-ui/ClipboardListOutline'
+const ClipboardList = lazy(() => import('mdi-material-ui/ClipboardList'))
+const ClipboardListOutline = lazy(() =>
+  import('mdi-material-ui/ClipboardListOutline')
+)
 
-import Dolly from 'mdi-material-ui/Dolly'
+const Dolly = lazy(() => import('mdi-material-ui/Dolly'))
 
-import FormatListBulletedSquare from 'mdi-material-ui/FormatListBulletedSquare'
+const FormatListBulletedSquare = lazy(() =>
+  import('mdi-material-ui/FormatListBulletedSquare')
+)
 
-import Eye from 'mdi-material-ui/Eye'
-import EyeOutline from 'mdi-material-ui/EyeOutline'
+const Eye = lazy(() => import('mdi-material-ui/Eye'))
+const EyeOutline = lazy(() => import('mdi-material-ui/EyeOutline'))
 
-import EyeOff from 'mdi-material-ui/EyeOff'
-import EyeOffOutline from 'mdi-material-ui/EyeOffOutline'
+const EyeOff = lazy(() => import('mdi-material-ui/EyeOff'))
+const EyeOffOutline = lazy(() => import('mdi-material-ui/EyeOffOutline'))
 
-import CarSide from 'mdi-material-ui/CarSide'
+const CarSide = lazy(() => import('mdi-material-ui/CarSide'))
 
-import Delete from 'mdi-material-ui/Delete'
-import DeleteOutline from 'mdi-material-ui/DeleteOutline'
+const Delete = lazy(() => import('mdi-material-ui/Delete'))
+const DeleteOutline = lazy(() => import('mdi-material-ui/DeleteOutline'))
 
-import PlusThick from 'mdi-material-ui/PlusThick'
-import Plus from 'mdi-material-ui/Plus'
+const PlusThick = lazy(() => import('mdi-material-ui/PlusThick'))
+const Plus = lazy(() => import('mdi-material-ui/Plus'))
 
-import MinusThick from 'mdi-material-ui/MinusThick'
-import Minus from 'mdi-material-ui/Minus'
+const MinusThick = lazy(() => import('mdi-material-ui/MinusThick'))
+const Minus = lazy(() => import('mdi-material-ui/Minus'))
 
-import CheckBold from 'mdi-material-ui/CheckBold'
-import Check from 'mdi-material-ui/Check'
+const CheckBold = lazy(() => import('mdi-material-ui/CheckBold'))
+const Check = lazy(() => import('mdi-material-ui/Check'))
 
-import Lock from 'mdi-material-ui/Lock'
-import LockOutline from 'mdi-material-ui/LockOutline'
+const Lock = lazy(() => import('mdi-material-ui/Lock'))
+const LockOutline = lazy(() => import('mdi-material-ui/LockOutline'))
 
-import LockOpenVariant from 'mdi-material-ui/LockOpenVariant'
-import LockOpenVariantOutline from 'mdi-material-ui/LockOpenVariantOutline'
+const LockOpenVariant = lazy(() => import('mdi-material-ui/LockOpenVariant'))
+const LockOpenVariantOutline = lazy(() =>
+  import('mdi-material-ui/LockOpenVariantOutline')
+)
 
-import Cog from 'mdi-material-ui/Cog'
-import CogOutline from 'mdi-material-ui/CogOutline'
+const Cog = lazy(() => import('mdi-material-ui/Cog'))
+const CogOutline = lazy(() => import('mdi-material-ui/CogOutline'))
 
-import Send from 'mdi-material-ui/Send'
-import SendOutline from 'mdi-material-ui/SendOutline'
+const Send = lazy(() => import('mdi-material-ui/Send'))
+const SendOutline = lazy(() => import('mdi-material-ui/SendOutline'))
 
-import ChevronRight from 'mdi-material-ui/ChevronRight'
+const ChevronRight = lazy(() => import('mdi-material-ui/ChevronRight'))
 
-import ChevronLeft from 'mdi-material-ui/ChevronLeft'
+const ChevronLeft = lazy(() => import('mdi-material-ui/ChevronLeft'))
 
-import ChevronUp from 'mdi-material-ui/ChevronUp'
+const ChevronUp = lazy(() => import('mdi-material-ui/ChevronUp'))
 
-import ChevronDown from 'mdi-material-ui/ChevronDown'
+const ChevronDown = lazy(() => import('mdi-material-ui/ChevronDown'))
 
-import DotsVertical from 'mdi-material-ui/DotsVertical'
+const DotsVertical = lazy(() => import('mdi-material-ui/DotsVertical'))
 
-import KeyboardReturn from 'mdi-material-ui/KeyboardReturn'
+const KeyboardReturn = lazy(() => import('mdi-material-ui/KeyboardReturn'))
 
-import FilterVariant from 'mdi-material-ui/FilterVariant'
+const FilterVariant = lazy(() => import('mdi-material-ui/FilterVariant'))
 
-import CurrencyUsdOff from 'mdi-material-ui/CurrencyUsdOff'
+const CurrencyUsdOff = lazy(() => import('mdi-material-ui/CurrencyUsdOff'))
 
-import CurrencyUsd from 'mdi-material-ui/CurrencyUsd'
+const CurrencyUsd = lazy(() => import('mdi-material-ui/CurrencyUsd'))
 
-import CashRegister from 'mdi-material-ui/CashRegister'
+const CashRegister = lazy(() => import('mdi-material-ui/CashRegister'))
 
-import Gift from 'mdi-material-ui/Gift'
-import GiftOutline from 'mdi-material-ui/GiftOutline'
+const Gift = lazy(() => import('mdi-material-ui/Gift'))
+const GiftOutline = lazy(() => import('mdi-material-ui/GiftOutline'))
 
-import GiftOpen from 'mdi-material-ui/GiftOpen'
-import GiftOpenOutline from 'mdi-material-ui/GiftOpenOutline'
+const GiftOpen = lazy(() => import('mdi-material-ui/GiftOpen'))
+const GiftOpenOutline = lazy(() => import('mdi-material-ui/GiftOpenOutline'))
 
-import Download from 'mdi-material-ui/Download'
-import DownloadOutline from 'mdi-material-ui/DownloadOutline'
+const Download = lazy(() => import('mdi-material-ui/Download'))
+const DownloadOutline = lazy(() => import('mdi-material-ui/DownloadOutline'))
 
-import Play from 'mdi-material-ui/Play'
-import PlayOutline from 'mdi-material-ui/PlayOutline'
+const Play = lazy(() => import('mdi-material-ui/Play'))
+const PlayOutline = lazy(() => import('mdi-material-ui/PlayOutline'))
 
-import LocationExit from 'mdi-material-ui/LocationExit'
+const LocationExit = lazy(() => import('mdi-material-ui/LocationExit'))
 
-import File from 'mdi-material-ui/File'
-import FileOutline from 'mdi-material-ui/FileOutline'
+const File = lazy(() => import('mdi-material-ui/File'))
+const FileOutline = lazy(() => import('mdi-material-ui/FileOutline'))
 
-import Upload from 'mdi-material-ui/Upload'
-import UploadOutline from 'mdi-material-ui/UploadOutline'
+const Upload = lazy(() => import('mdi-material-ui/Upload'))
+const UploadOutline = lazy(() => import('mdi-material-ui/UploadOutline'))
 
-import FileUpload from 'mdi-material-ui/FileUpload'
-import FileUploadOutline from 'mdi-material-ui/FileUploadOutline'
+const FileUpload = lazy(() => import('mdi-material-ui/FileUpload'))
+const FileUploadOutline = lazy(() =>
+  import('mdi-material-ui/FileUploadOutline')
+)
 
-import CalendarCheck from 'mdi-material-ui/CalendarCheck'
-import CalendarCheckOutline from 'mdi-material-ui/CalendarCheckOutline'
+const CalendarCheck = lazy(() => import('mdi-material-ui/CalendarCheck'))
+const CalendarCheckOutline = lazy(() =>
+  import('mdi-material-ui/CalendarCheckOutline')
+)
 
-import CalendarMonth from 'mdi-material-ui/CalendarMonth'
-import CalendarMonthOutline from 'mdi-material-ui/CalendarMonthOutline'
+const CalendarMonth = lazy(() => import('mdi-material-ui/CalendarMonth'))
+const CalendarMonthOutline = lazy(() =>
+  import('mdi-material-ui/CalendarMonthOutline')
+)
 
-import ChartBox from 'mdi-material-ui/ChartBox'
-import ChartBoxOutline from 'mdi-material-ui/ChartBoxOutline'
+const ChartBox = lazy(() => import('mdi-material-ui/ChartBox'))
+const ChartBoxOutline = lazy(() => import('mdi-material-ui/ChartBoxOutline'))
 
-import ViewGrid from 'mdi-material-ui/ViewGrid'
-import ViewGridOutline from 'mdi-material-ui/ViewGridOutline'
+const ViewGrid = lazy(() => import('mdi-material-ui/ViewGrid'))
+const ViewGridOutline = lazy(() => import('mdi-material-ui/ViewGridOutline'))
 
-import Calendar from 'mdi-material-ui/Calendar'
-import CalendarOutline from 'mdi-material-ui/CalendarOutline'
+const Calendar = lazy(() => import('mdi-material-ui/Calendar'))
+const CalendarOutline = lazy(() => import('mdi-material-ui/CalendarOutline'))
 
-import CardAccountDetails from 'mdi-material-ui/CardAccountDetails'
-import CardAccountDetailsOutline from 'mdi-material-ui/CardAccountDetailsOutline'
+const CardAccountDetails = lazy(() =>
+  import('mdi-material-ui/CardAccountDetails')
+)
+const CardAccountDetailsOutline = lazy(() =>
+  import('mdi-material-ui/CardAccountDetailsOutline')
+)
 
-import Cake from 'mdi-material-ui/Cake'
+const Cake = lazy(() => import('mdi-material-ui/Cake'))
 
-import Email from 'mdi-material-ui/Email'
-import EmailOutline from 'mdi-material-ui/EmailOutline'
+const Email = lazy(() => import('mdi-material-ui/Email'))
+const EmailOutline = lazy(() => import('mdi-material-ui/EmailOutline'))
 
-import Cellphone from 'mdi-material-ui/Cellphone'
+const Cellphone = lazy(() => import('mdi-material-ui/Cellphone'))
 
-import At from 'mdi-material-ui/At'
+const PhoneCheck = lazy(() => import('mdi-material-ui/PhoneCheck'))
+const PhoneCheckOutline = lazy(() =>
+  import('mdi-material-ui/PhoneCheckOutline')
+)
 
-import ListStatus from 'mdi-material-ui/ListStatus'
+const At = lazy(() => import('mdi-material-ui/At'))
 
-import Information from 'mdi-material-ui/Information'
-import InformationOutline from 'mdi-material-ui/InformationOutline'
+const ListStatus = lazy(() => import('mdi-material-ui/ListStatus'))
 
-import Security from 'mdi-material-ui/Security'
+const Information = lazy(() => import('mdi-material-ui/Information'))
+const InformationOutline = lazy(() =>
+  import('mdi-material-ui/InformationOutline')
+)
 
-import Phone from 'mdi-material-ui/Phone'
-import PhoneOutline from 'mdi-material-ui/PhoneOutline'
+const Security = lazy(() => import('mdi-material-ui/Security'))
 
-import CheckboxMultipleMarkedCircle from 'mdi-material-ui/CheckboxMultipleMarkedCircle'
-import CheckboxMultipleMarkedCircleOutline from 'mdi-material-ui/CheckboxMultipleMarkedCircleOutline'
+const Phone = lazy(() => import('mdi-material-ui/Phone'))
+const PhoneOutline = lazy(() => import('mdi-material-ui/PhoneOutline'))
 
-import CheckboxMarkedCircle from 'mdi-material-ui/CheckboxMarkedCircle'
-import CheckboxMarkedCircleOutline from 'mdi-material-ui/CheckboxMarkedCircleOutline'
+const CheckboxMultipleMarkedCircle = lazy(() =>
+  import('mdi-material-ui/CheckboxMultipleMarkedCircle')
+)
+const CheckboxMultipleMarkedCircleOutline = lazy(() =>
+  import('mdi-material-ui/CheckboxMultipleMarkedCircleOutline')
+)
 
-import CalendarPlus from 'mdi-material-ui/CalendarPlus'
+const CheckboxMarkedCircle = lazy(() =>
+  import('mdi-material-ui/CheckboxMarkedCircle')
+)
+const CheckboxMarkedCircleOutline = lazy(() =>
+  import('mdi-material-ui/CheckboxMarkedCircleOutline')
+)
 
-import CalendarText from 'mdi-material-ui/CalendarText'
-import CalendarTextOutline from 'mdi-material-ui/CalendarTextOutline'
+const CalendarPlus = lazy(() => import('mdi-material-ui/CalendarPlus'))
 
-import TextBoxPlus from 'mdi-material-ui/TextBoxPlus'
-import TextBoxPlusOutline from 'mdi-material-ui/TextBoxPlusOutline'
+const CalendarText = lazy(() => import('mdi-material-ui/CalendarText'))
+const CalendarTextOutline = lazy(() =>
+  import('mdi-material-ui/CalendarTextOutline')
+)
 
-import ArrowUpThick from 'mdi-material-ui/ArrowUpThick'
-import ArrowUp from 'mdi-material-ui/ArrowUp'
+const TextBoxPlus = lazy(() => import('mdi-material-ui/TextBoxPlus'))
+const TextBoxPlusOutline = lazy(() =>
+  import('mdi-material-ui/TextBoxPlusOutline')
+)
 
-import ArrowDownThick from 'mdi-material-ui/ArrowDownThick'
-import ArrowDown from 'mdi-material-ui/ArrowDown'
+const ArrowUpThick = lazy(() => import('mdi-material-ui/ArrowUpThick'))
+const ArrowUp = lazy(() => import('mdi-material-ui/ArrowUp'))
 
-import PageFirst from 'mdi-material-ui/PageFirst'
+const ArrowDownThick = lazy(() => import('mdi-material-ui/ArrowDownThick'))
+const ArrowDown = lazy(() => import('mdi-material-ui/ArrowDown'))
 
-import PageLast from 'mdi-material-ui/PageLast'
+const PageFirst = lazy(() => import('mdi-material-ui/PageFirst'))
 
-import PackageVariant from 'mdi-material-ui/PackageVariant'
+const PageLast = lazy(() => import('mdi-material-ui/PageLast'))
 
-import PackageVariantClosed from 'mdi-material-ui/PackageVariantClosed'
+const PackageVariant = lazy(() => import('mdi-material-ui/PackageVariant'))
 
-import PackageVariantClosedMinus from 'mdi-material-ui/PackageVariantClosedMinus'
+const PackageVariantClosed = lazy(() =>
+  import('mdi-material-ui/PackageVariantClosed')
+)
 
-import PackageVariantClosedPlus from 'mdi-material-ui/PackageVariantClosedPlus'
+const PackageVariantClosedMinus = lazy(() =>
+  import('mdi-material-ui/PackageVariantClosedMinus')
+)
 
-import PackageVariantClosedRemove from 'mdi-material-ui/PackageVariantClosedRemove'
+const PackageVariantClosedPlus = lazy(() =>
+  import('mdi-material-ui/PackageVariantClosedPlus')
+)
 
-import PackageVariantMinus from 'mdi-material-ui/PackageVariantMinus'
+const PackageVariantClosedRemove = lazy(() =>
+  import('mdi-material-ui/PackageVariantClosedRemove')
+)
 
-import PackageVariantPlus from 'mdi-material-ui/PackageVariantPlus'
+const PackageVariantMinus = lazy(() =>
+  import('mdi-material-ui/PackageVariantMinus')
+)
 
-import PackageVariantRemove from 'mdi-material-ui/PackageVariantRemove'
+const PackageVariantPlus = lazy(() =>
+  import('mdi-material-ui/PackageVariantPlus')
+)
 
-import Magnify from 'mdi-material-ui/Magnify'
+const PackageVariantRemove = lazy(() =>
+  import('mdi-material-ui/PackageVariantRemove')
+)
 
-import CursorDefault from 'mdi-material-ui/CursorDefault'
-import CursorDefaultOutline from 'mdi-material-ui/CursorDefaultOutline'
+const Magnify = lazy(() => import('mdi-material-ui/Magnify'))
 
-import CalendarRemove from 'mdi-material-ui/CalendarRemove'
-import CalendarRemoveOutline from 'mdi-material-ui/CalendarRemoveOutline'
+const CursorDefault = lazy(() => import('mdi-material-ui/CursorDefault'))
+const CursorDefaultOutline = lazy(() =>
+  import('mdi-material-ui/CursorDefaultOutline')
+)
 
-import CalendarClock from 'mdi-material-ui/CalendarClock'
+const CalendarRemove = lazy(() => import('mdi-material-ui/CalendarRemove'))
+const CalendarRemoveOutline = lazy(() =>
+  import('mdi-material-ui/CalendarRemoveOutline')
+)
 
-import CalendarCursor from 'mdi-material-ui/CalendarCursor'
+const CalendarClock = lazy(() => import('mdi-material-ui/CalendarClock'))
 
-import CalendarEdit from 'mdi-material-ui/CalendarEdit'
+const CalendarCursor = lazy(() => import('mdi-material-ui/CalendarCursor'))
 
-import BellCheck from 'mdi-material-ui/BellCheck'
-import BellCheckOutline from 'mdi-material-ui/BellCheckOutline'
+const CalendarEdit = lazy(() => import('mdi-material-ui/CalendarEdit'))
 
-import BellOff from 'mdi-material-ui/BellOff'
-import BellOffOutline from 'mdi-material-ui/BellOffOutline'
+const BellCheck = lazy(() => import('mdi-material-ui/BellCheck'))
+const BellCheckOutline = lazy(() => import('mdi-material-ui/BellCheckOutline'))
 
-import Home from 'mdi-material-ui/Home'
-import HomeOutline from 'mdi-material-ui/HomeOutline'
+const BellOff = lazy(() => import('mdi-material-ui/BellOff'))
+const BellOffOutline = lazy(() => import('mdi-material-ui/BellOffOutline'))
 
-import PoundBox from 'mdi-material-ui/PoundBox'
-import PoundBoxOutline from 'mdi-material-ui/PoundBoxOutline'
+const Home = lazy(() => import('mdi-material-ui/Home'))
+const HomeOutline = lazy(() => import('mdi-material-ui/HomeOutline'))
 
-import School from 'mdi-material-ui/School'
-import SchoolOutline from 'mdi-material-ui/SchoolOutline'
+const PoundBox = lazy(() => import('mdi-material-ui/PoundBox'))
+const PoundBoxOutline = lazy(() => import('mdi-material-ui/PoundBoxOutline'))
 
-import FolderAccount from 'mdi-material-ui/FolderAccount'
-import FolderAccountOutline from 'mdi-material-ui/FolderAccountOutline'
+const School = lazy(() => import('mdi-material-ui/School'))
+const SchoolOutline = lazy(() => import('mdi-material-ui/SchoolOutline'))
 
-import AccountGroup from 'mdi-material-ui/AccountGroup'
-import AccountGroupOutline from 'mdi-material-ui/AccountGroupOutline'
+const FolderAccount = lazy(() => import('mdi-material-ui/FolderAccount'))
+const FolderAccountOutline = lazy(() =>
+  import('mdi-material-ui/FolderAccountOutline')
+)
 
-import AccountSupervisor from 'mdi-material-ui/AccountSupervisor'
-import AccountSupervisorOutline from 'mdi-material-ui/AccountSupervisorOutline'
+const FolderPound = lazy(() => import('mdi-material-ui/FolderPound'))
+const FolderPoundOutline = lazy(() =>
+  import('mdi-material-ui/FolderPoundOutline')
+)
 
-import Notebook from 'mdi-material-ui/Notebook'
-import NotebookOutline from 'mdi-material-ui/NotebookOutline'
+const AccountGroup = lazy(() => import('mdi-material-ui/AccountGroup'))
+const AccountGroupOutline = lazy(() =>
+  import('mdi-material-ui/AccountGroupOutline')
+)
 
-import Cart from 'mdi-material-ui/Cart'
-import CartOutline from 'mdi-material-ui/CartOutline'
-import CartPlus from 'mdi-material-ui/CartPlus'
+const AccountSupervisor = lazy(() =>
+  import('mdi-material-ui/AccountSupervisor')
+)
+const AccountSupervisorOutline = lazy(() =>
+  import('mdi-material-ui/AccountSupervisorOutline')
+)
 
-import Bell from 'mdi-material-ui/Bell'
-import BellOutline from 'mdi-material-ui/BellOutline'
+const Notebook = lazy(() => import('mdi-material-ui/Notebook'))
+const NotebookOutline = lazy(() => import('mdi-material-ui/NotebookOutline'))
 
-import Circle from 'mdi-material-ui/Circle'
-import CircleOutline from 'mdi-material-ui/CircleOutline'
+const Cart = lazy(() => import('mdi-material-ui/Cart'))
+const CartOutline = lazy(() => import('mdi-material-ui/CartOutline'))
+const CartPlus = lazy(() => import('mdi-material-ui/CartPlus'))
 
-import History from 'mdi-material-ui/History'
+const Bell = lazy(() => import('mdi-material-ui/Bell'))
+const BellOutline = lazy(() => import('mdi-material-ui/BellOutline'))
 
-import Truck from 'mdi-material-ui/Truck'
-import TruckOutline from 'mdi-material-ui/TruckOutline'
+const Circle = lazy(() => import('mdi-material-ui/Circle'))
+const CircleOutline = lazy(() => import('mdi-material-ui/CircleOutline'))
 
-import TruckFast from 'mdi-material-ui/TruckFast'
-import TruckFastOutline from 'mdi-material-ui/TruckFastOutline'
+const History = lazy(() => import('mdi-material-ui/History'))
 
-import TruckCheck from 'mdi-material-ui/TruckCheck'
-import TruckCheckOutline from 'mdi-material-ui/TruckCheckOutline'
+const Truck = lazy(() => import('mdi-material-ui/Truck'))
+const TruckOutline = lazy(() => import('mdi-material-ui/TruckOutline'))
 
-import TruckDelivery from 'mdi-material-ui/TruckDelivery'
-import TruckDeliveryOutline from 'mdi-material-ui/TruckDeliveryOutline'
+const TruckFast = lazy(() => import('mdi-material-ui/TruckFast'))
+const TruckFastOutline = lazy(() => import('mdi-material-ui/TruckFastOutline'))
 
-import TagMultiple from 'mdi-material-ui/TagMultiple'
-import TagMultipleOutline from 'mdi-material-ui/TagMultipleOutline'
+const TruckCheck = lazy(() => import('mdi-material-ui/TruckCheck'))
+const TruckCheckOutline = lazy(() =>
+  import('mdi-material-ui/TruckCheckOutline')
+)
 
-import TagPlus from 'mdi-material-ui/TagPlus'
-import TagPlusOutline from 'mdi-material-ui/TagPlusOutline'
+const TruckDelivery = lazy(() => import('mdi-material-ui/TruckDelivery'))
+const TruckDeliveryOutline = lazy(() =>
+  import('mdi-material-ui/TruckDeliveryOutline')
+)
 
-import Briefcase from 'mdi-material-ui/Briefcase'
-import BriefcaseOutline from 'mdi-material-ui/BriefcaseOutline'
+const TagMultiple = lazy(() => import('mdi-material-ui/TagMultiple'))
+const TagMultipleOutline = lazy(() =>
+  import('mdi-material-ui/TagMultipleOutline')
+)
 
-import RemoteDesktop from 'mdi-material-ui/RemoteDesktop'
+const TagPlus = lazy(() => import('mdi-material-ui/TagPlus'))
+const TagPlusOutline = lazy(() => import('mdi-material-ui/TagPlusOutline'))
 
-import Store from 'mdi-material-ui/Store'
-import StoreOutline from 'mdi-material-ui/StoreOutline'
+const Briefcase = lazy(() => import('mdi-material-ui/Briefcase'))
+const BriefcaseOutline = lazy(() => import('mdi-material-ui/BriefcaseOutline'))
 
-import Repeat from 'mdi-material-ui/Repeat'
+const RemoteDesktop = lazy(() => import('mdi-material-ui/RemoteDesktop'))
 
-import SwapHorizontalCircle from 'mdi-material-ui/SwapHorizontalCircle'
-import SwapHorizontalCircleOutline from 'mdi-material-ui/SwapHorizontalCircleOutline'
+const Store = lazy(() => import('mdi-material-ui/Store'))
+const StoreOutline = lazy(() => import('mdi-material-ui/StoreOutline'))
 
-import CarBattery from 'mdi-material-ui/CarBattery'
+const Repeat = lazy(() => import('mdi-material-ui/Repeat'))
 
-import Restart from 'mdi-material-ui/Restart'
+const SwapHorizontalCircle = lazy(() =>
+  import('mdi-material-ui/SwapHorizontalCircle')
+)
+const SwapHorizontalCircleOutline = lazy(() =>
+  import('mdi-material-ui/SwapHorizontalCircleOutline')
+)
 
-import Cancel from 'mdi-material-ui/Cancel'
+const CarBattery = lazy(() => import('mdi-material-ui/CarBattery'))
 
-import Cached from 'mdi-material-ui/Cached'
+const Tire = lazy(() => import('mdi-material-ui/Tire'))
 
-import MagnifyScan from 'mdi-material-ui/MagnifyScan'
+const Restart = lazy(() => import('mdi-material-ui/Restart'))
 
-import MagnifyPlus from 'mdi-material-ui/MagnifyPlus'
-import MagnifyPlusOutline from 'mdi-material-ui/MagnifyPlusOutline'
+const Cancel = lazy(() => import('mdi-material-ui/Cancel'))
 
-import MagnifyMinus from 'mdi-material-ui/MagnifyMinus'
-import MagnifyMinusOutline from 'mdi-material-ui/MagnifyMinusOutline'
+const Cached = lazy(() => import('mdi-material-ui/Cached'))
 
-import MagnifyClose from 'mdi-material-ui/MagnifyClose'
-import MagnifyRemoveOutline from 'mdi-material-ui/MagnifyRemoveOutline'
+const MagnifyScan = lazy(() => import('mdi-material-ui/MagnifyScan'))
 
-import Oil from 'mdi-material-ui/Oil'
+const MagnifyPlus = lazy(() => import('mdi-material-ui/MagnifyPlus'))
+const MagnifyPlusOutline = lazy(() =>
+  import('mdi-material-ui/MagnifyPlusOutline')
+)
 
-import RegisteredTrademark from 'mdi-material-ui/RegisteredTrademark'
+const MagnifyMinus = lazy(() => import('mdi-material-ui/MagnifyMinus'))
+const MagnifyMinusOutline = lazy(() =>
+  import('mdi-material-ui/MagnifyMinusOutline')
+)
 
-import CircleDouble from 'mdi-material-ui/CircleDouble'
+const MagnifyClose = lazy(() => import('mdi-material-ui/MagnifyClose'))
+const MagnifyRemoveOutline = lazy(() =>
+  import('mdi-material-ui/MagnifyRemoveOutline')
+)
 
-import BrightnessPercent from 'mdi-material-ui/BrightnessPercent'
+const Oil = lazy(() => import('mdi-material-ui/Oil'))
 
-import Percent from 'mdi-material-ui/Percent'
-import PercentOutline from 'mdi-material-ui/PercentOutline'
+const RegisteredTrademark = lazy(() =>
+  import('mdi-material-ui/RegisteredTrademark')
+)
 
-import Domain from 'mdi-material-ui/Domain'
+const CircleDouble = lazy(() => import('mdi-material-ui/CircleDouble'))
 
-import Facebook from 'mdi-material-ui/Facebook'
-import Youtube from 'mdi-material-ui/Youtube'
-import Instagram from 'mdi-material-ui/Instagram'
-import Whatsapp from 'mdi-material-ui/Whatsapp'
-import Google from 'mdi-material-ui/Google'
-import Twitter from 'mdi-material-ui/Twitter'
-import ContentCopy from 'mdi-material-ui/ContentCopy'
-import ContentPaste from 'mdi-material-ui/ContentPaste'
+const BrightnessPercent = lazy(() =>
+  import('mdi-material-ui/BrightnessPercent')
+)
 
-import ViewList from 'mdi-material-ui/ViewList'
-import ViewListOutline from 'mdi-material-ui/ViewListOutline'
+const Percent = lazy(() => import('mdi-material-ui/Percent'))
+const PercentOutline = lazy(() => import('mdi-material-ui/PercentOutline'))
+
+const Domain = lazy(() => import('mdi-material-ui/Domain'))
+
+const Facebook = lazy(() => import('mdi-material-ui/Facebook'))
+const Youtube = lazy(() => import('mdi-material-ui/Youtube'))
+const Instagram = lazy(() => import('mdi-material-ui/Instagram'))
+const Whatsapp = lazy(() => import('mdi-material-ui/Whatsapp'))
+const Google = lazy(() => import('mdi-material-ui/Google'))
+const Twitter = lazy(() => import('mdi-material-ui/Twitter'))
+const ContentCopy = lazy(() => import('mdi-material-ui/ContentCopy'))
+const ContentPaste = lazy(() => import('mdi-material-ui/ContentPaste'))
+
+const ViewList = lazy(() => import('mdi-material-ui/ViewList'))
+const ViewListOutline = lazy(() => import('mdi-material-ui/ViewListOutline'))
 
 const icons = {
   HelpRhombus: {
@@ -520,6 +640,11 @@ const icons = {
   CarBattery: {
     filled: CarBattery,
     outline: CarBattery
+  },
+
+  Tire: {
+    filled: Tire,
+    outline: Tire
   },
 
   Restart: {
@@ -892,6 +1017,16 @@ const icons = {
     outline: Cellphone
   },
 
+  Cellphone: {
+    filled: Cellphone,
+    outline: Cellphone
+  },
+
+  PhoneCheck: {
+    filled: PhoneCheck,
+    outline: PhoneCheckOutline
+  },
+
   At: {
     filled: At,
     outline: At
@@ -1062,6 +1197,11 @@ const icons = {
     outline: FolderAccountOutline
   },
 
+  FolderPound: {
+    filled: FolderPound,
+    outline: FolderPoundOutline
+  },
+
   AccountGroup: {
     filled: AccountGroup,
     outline: AccountGroupOutline
@@ -1211,7 +1351,7 @@ const icons = {
 const Icon = (props) => {
   const { name, forceType, type } = props
   const theme = useTheme()
-  let newProps = Object.assign({}, {}, props)
+  const newProps = Object.assign({}, {}, props)
   if ('color' in newProps) {
     newProps.className = 'className' in newProps ? newProps.className : ''
 
@@ -1224,12 +1364,16 @@ const Icon = (props) => {
         ? 'color-white-text'
         : 'color-app-black-text'
   }
-  delete newProps['forceType']
+  delete newProps.forceType
 
-  //Se carga el componente deseado
+  // Se carga el componente deseado
   const IconComponent = icons[name][forceType ? type : 'outline']
 
-  return <IconComponent {...newProps} />
+  return (
+    <Suspense fallback={<p>*</p>}>
+      <IconComponent {...newProps} />
+    </Suspense>
+  )
 }
 
 export default Icon
